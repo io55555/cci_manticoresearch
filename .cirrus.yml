@@ -2,7 +2,7 @@ task:
     name: CCI_ARM
     #only_if: "changesIncludeOnly('build/*.sh')"
     only_if: $CIRRUS_BRANCH == 'master' && ( $CIRRUS_COMMIT_MESSAGE =~ '.*cci_all.*' || $CIRRUS_COMMIT_MESSAGE =~ '.*cci_arm.*' )
-    timeout_in: 40m
+    timeout_in: 60m
     arm_container:
         #image: alpine:3.17.2
         image: 55555/dev:alpine3.15_arm_gcc10.3.1_cmake3.21.3_20221013_all
@@ -19,7 +19,7 @@ task:
 task:
     name: CCI_X64
     only_if: $CIRRUS_BRANCH == 'master' && ( $CIRRUS_COMMIT_MESSAGE =~ '.*cci_all.*' || $CIRRUS_COMMIT_MESSAGE =~ '.*cci_arm.*' )
-    timeout_in: 40m
+    timeout_in: 60m
     container:
         image: 55555/dev:alpine3.15_x64_gcc10.3.1_cmake3.21.3_20221013_all
         cpu: 4
