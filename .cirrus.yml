@@ -5,7 +5,7 @@ task:
     timeout_in: 60m
     arm_container:
         #image: alpine:3.17.2
-        image: 55555/dev:alpine3.15_arm_gcc10.3.1_cmake3.21.3_20221013_all
+        image: 55555/dev:alpine3.22_arm_gcc14.2.0_cmake3.31.7_20250707
         cpu: 4
         memory: 12G
         greedy: true
@@ -21,7 +21,7 @@ task:
     only_if: $CIRRUS_BRANCH == 'master' && ( $CIRRUS_COMMIT_MESSAGE =~ '.*cci_all.*' || $CIRRUS_COMMIT_MESSAGE =~ '.*cci_arm.*' )
     timeout_in: 60m
     container:
-        image: 55555/dev:alpine3.15_x64_gcc10.3.1_cmake3.21.3_20221013_all
+        image: 55555/dev:alpine3.22_x64_gcc14.2.0_cmake3.31.7_20250707
         cpu: 4
         memory: 12G
         greedy: true
